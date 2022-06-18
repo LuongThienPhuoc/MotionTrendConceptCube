@@ -163,7 +163,6 @@
 
 .modal-detail-footer {
     display: flex;
-    flex-wrap: wrap;
 }
 
 .modal-detail-footer__comment {
@@ -186,9 +185,11 @@
     .modal-detail-footer__skill-user{
         width: 100%;
     }
-}
+    .modal-detail-footer {
+        flex-wrap: wrap;
+    }
+    
 
-@media only screen and (max-width: 800px) {
     .modal-detail-footer__comment {
         width: 100%;
         border: none;
@@ -205,5 +206,4 @@
         align-items: flex-end;
         margin-bottom: 30px;
     }
-
 }

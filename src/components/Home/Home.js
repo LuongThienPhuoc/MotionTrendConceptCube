@@ -1,12 +1,35 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../../style/Home.css'
 import '../../style/grid.css'
 import Card from './Card'
 import Tutorial from './Tutorial';
 import ModalDetail from '../ModalDetails/ModalDetail';
 function Home(props) {
-    const n = 20;
-    const [isShowModalDetail, setIsModalDetail] = useState(true)
+    const refLoading = useRef()
+    const n = 20
+    const [isShowModalDetail, setIsModalDetail] = useState(false)
+    const [loadMore, setLoadMore] = useState(true);
+    const [currentList, setCurrentList] = useState(0);
+    useEffect(() => {
+        if (loadMore === true) {
+            setCurrentList(oldState => oldState += 20)
+        }
+        setLoadMore(false);
+    }, [loadMore])
+
+    useEffect(() => {
+        const handleScroll = (e) => {
+            if (window.scrollY + window.innerHeight >= refLoading.current.clientHeight + refLoading.current.offsetTop) {
+                setLoadMore(true);
+            }
+        }
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, []);
+
+
+
     return (
         <>
             {
@@ -19,9 +42,9 @@ function Home(props) {
                     {
                         [...Array(n)].map((e, i) => {
                             if (i % 2 === 0) {
-                                return (<Card isImportant={true}></Card>)
+                                return (<Card key={i} showModal={setIsModalDetail} isImportant={true}></Card>)
                             } else {
-                                return (<Card isImportant={false}></Card>)
+                                return (<Card key={i} showModal={setIsModalDetail} isImportant={false}></Card>)
                             }
                         })
                     }
@@ -33,15 +56,24 @@ function Home(props) {
                     {
                         [...Array(5)].map((e, i) => {
                             if (i % 2 === 0) {
-                                return (<Card isImportant={true}></Card>)
+                                return (<Card key={i} showModal={setIsModalDetail} isImportant={true}></Card>)
                             } else {
-                                return (<Card isImportant={false}></Card>)
+                                return (<Card key={i} showModal={setIsModalDetail} isImportant={false}></Card>)
+                            }
+                        })
+                    }
+                    {
+                        [...Array(currentList)].map((e, i) => {
+                            if (i % 2 === 0) {
+                                return (<Card key={i} showModal={setIsModalDetail} isImportant={true}></Card>)
+                            } else {
+                                return (<Card key={i} showModal={setIsModalDetail} isImportant={false}></Card>)
                             }
                         })
                     }
                 </div>
             </div>
-            <div style={{display:'flex', justifyContent:'center', width:'100%'}} class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }} ref={refLoading} class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         </>
     );
 }

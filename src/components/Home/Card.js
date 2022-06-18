@@ -4,7 +4,7 @@ import { AiFillHeart } from 'react-icons/ai'
 import { BiShow } from 'react-icons/bi'
 function Card(props) {
     return (
-        <div className='col col-1-5'>
+        <div onClick={() => {props.showModal(true)}} className='col col-1-5'>
             <div className='card'>
                 <div className='content'>
                     <img src='https://hacoled.com/wp-content/uploads/2022/01/anh-2-may-tinh-800x450.jpg' alt='Ảnh đẹp'></img>
