@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 function Button(props) {
     return (
-        <div style={{ backgroundColor: props.isBlack? 'black' : 'white', color:props.isBlack? 'white' : 'black' }} className='btn-icons'>
+        <div style={{ backgroundColor: props.isBlack? "black" : "white", color:props.isBlack? "white" : "black" }} className="btn-icons">
             {props.icon}
-            <div style={{ fontSize: '10px', marginLeft: '5px' }}>{props.content}</div>
+            <div style={{ fontSize: "10px", marginLeft: "5px" }}>{props.content}</div>
         </div>
     );
 }

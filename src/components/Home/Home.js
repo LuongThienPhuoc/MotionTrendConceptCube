@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
-import '../../style/Home.css'
-import '../../style/grid.css'
-import Card from './Card'
-import Tutorial from './Tutorial';
-import ModalDetail from '../ModalDetails/ModalDetail';
+import React, { useState, useEffect, useRef } from "react";
+import "../../style/Home.css"
+import "../../style/grid.css"
+import Card from "./Card"
+import Tutorial from "./Tutorial";
+import ModalDetail from "../ModalDetails/ModalDetail";
 function Home(props) {
     const refLoading = useRef()
     const n = 20
@@ -25,7 +25,7 @@ function Home(props) {
         }
 
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
     }, []);
 
 
@@ -37,8 +37,8 @@ function Home(props) {
                     <ModalDetail handleClose={setIsModalDetail}></ModalDetail>
                 )
             }
-            <div className='home' style={{ marginBottom: '20px' }}>
-                <div className='row'>
+            <div className="home" style={{ marginBottom: "20px" }}>
+                <div className="row">
                     {
                         [...Array(n)].map((e, i) => {
                             if (i % 2 === 0) {
@@ -51,8 +51,8 @@ function Home(props) {
                 </div>
             </div>
             <Tutorial></Tutorial>
-            <div className='home' style={{ marginBottom: '20px' }}>
-                <div className='row'>
+            <div className="home" style={{ marginBottom: "20px" }}>
+                <div className="row">
                     {
                         [...Array(5)].map((e, i) => {
                             if (i % 2 === 0) {
@@ -73,7 +73,7 @@ function Home(props) {
                     }
                 </div>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }} ref={refLoading} class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div style={{ display: "flex", justifyContent: "center", width: "100%" }} ref={refLoading} class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         </>
     );
 }
