@@ -1,0 +1,89 @@
+.tutorial {
+    padding: 40px 60px;
+    background-color: var(--background-tutorial);
+    display: block;
+}
+
+.tutorial-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.tutorial-des {
+    width: 60%;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.tutorial-btn {
+    display: inline;
+    padding: 10px 30px;
+    background-color: var(--background-color);
+    color: var(--white2-color);
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.tutorial-btn:hover {
+    background-color: var(--white2-color);
+    color: var(--background-color);
+}
+
+.tutorial-img {
+    margin-top: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 80%;
+    height: 270px;
+}
+
+.tutorial-live {
+    position: absolute;
+    background-color: red;
+    color: var(--white-color);
+    top: 8%;
+    left: 8%;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    padding: 0px 10px;
+}
+
+.tutorial-play {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    height: 50px;
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.tutorial-play::after {
+    content: "";
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    border-width: 9px 15px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--white-color);
+}
+
+.tutorial-play:hover {
+    background-color: var(--red-color);
+}
+
+.tutorial-time{
+    position: absolute;
+    bottom: 15px;
+    right: 13%;
+    background-color: rgba(0, 0, 0, 0.8);
+    line-height: 16px;
+    padding:3px 6px;
+    color: var(--white-color);
+}
+

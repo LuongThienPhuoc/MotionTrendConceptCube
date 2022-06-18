@@ -1,0 +1,150 @@
+.app-bar {
+    background-color: var(--background-color);
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--white2-color);
+    font-weight: 600;
+}
+
+.app-bar_line {
+    width: 3px;
+    height: 14px;
+    border-radius: 8px;
+    margin: 0 5px;
+    transform: translateY(+8px);
+}
+
+.rotate-135 {
+    margin-top: 8px;
+    transform: rotate(135deg);
+}
+
+.red {
+    background-color: var(--red-color);
+}
+
+.white {
+    background-color: var(--white-color);
+}
+
+.app-bar__link {
+    margin-left: 30px;
+    color: var(--grey-color);
+    cursor: pointer;
+}
+
+.app-bar_title {
+    flex: 4;
+}
+
+.app-bar_input>input {
+    outline: none;
+    color: var(--white2-color);
+    background-color: var(--background-color);
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.app-bar_input {
+    padding-left: 20px;
+    flex: 3;
+    border-bottom: 1px solid var(--white2-color);
+}
+
+::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--white2-color);
+    font-weight: 600;
+}
+
+.app-bar_user {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon {
+    font-size: 25px;
+    transform: translateY(+4px);
+    cursor: pointer;
+    color: var(--white-color);
+}
+
+.mobile-menu-icon {
+    display: none
+}
+
+.modal-login {
+    display: flex
+}
+
+@media only screen and (max-width: 850px) {
+    .mobile-menu-icon {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .modal-login {
+        background-color: var(--white-color);
+        color: var(--background-color);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+        border-radius: 8px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        display: none;
+    }
+
+    .app-bar__link {
+        color: var(--grey-color);
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+        padding: 0 10px;
+    }
+
+    .app-bar__link:hover{
+        opacity: .7;
+    }
+
+    .modal-login.left div:nth-child(2) {
+        border-bottom: 2px solid var(--grey-color);
+    }
+
+    .modal-login.right div:nth-child(1) {
+        border-bottom: 2px solid var(--grey-color);
+    }
+    
+
+    .modal-login-name {
+        display: none;
+    }
+
+    .modal-login.left {
+        top: 100%;
+        left: 0;
+    }
+
+    .modal-login.right {
+        top: 100%;
+        right: 0;
+    }
+
+    .app-bar_name {
+        position: relative;
+    }
+
+    .app-bar_input {
+        flex: 4;
+    }
+
+    .app-bar_user {
+        flex: 4;
+        position: relative;
+    }
+}
